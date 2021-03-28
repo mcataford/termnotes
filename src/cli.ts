@@ -9,10 +9,12 @@ import init from './commands/init'
 yargs
     .scriptName('notes')
     .usage('$0 <command> [options]')
-    .command([init, newDocument, ls])
+    .command(init)
+    .command(newDocument)
+    .command(ls)
     .demandCommand(1)
     .check((argv) => {
-        const command = argv._[0]
+        const command = String(argv._[0])
         if (!['ls', 'new', 'init'].includes(command))
             throw new Error(`${command} is not a valid command.`)
 
