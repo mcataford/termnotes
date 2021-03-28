@@ -12,6 +12,7 @@
   ],
   "license": "MIT",
   "scripts": {
+    "prepack": "rm -rf lib && run build",
     "types": "run tsc --noEmit",
     "types:watch": "run types --watch",
     "lint": "run eslint src/*.ts ./*.js",
